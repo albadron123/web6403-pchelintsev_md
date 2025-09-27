@@ -5,7 +5,9 @@
 ## Кто мой научный руководитель?
 Гошин Е.В. 
 ## Тема диплома o_O?
-что то про Алгебру Клиффорда и компьютерное зрение..
-### Любимая цитата
--- Docendo discimus -- типа сенека..
--- You miss 100% shots you don't take -- W. Gretzky
+что то про Алгебру Клиффорда и компьютерное зрение...
+## Любимая цитата
+- *Docendo discimus* **-- типа Cенека..**
+- *You miss 100% shots you don't take* **-- W. Gretzky**
+## ...
+![fresco](https://github.com/user-attachments/assets/4d1ef407-1281-4b8f-906d-be200c0d459e)
