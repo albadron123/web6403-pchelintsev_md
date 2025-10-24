@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FROGOLF</title>
+        <link rel="stylesheet" href="styles/main_styles.css">
+        <link rel="icon" type="image/svg+xml" href="src/icon.svg">
+    </head>
+    <body>
+        <div id = "wrapper">
+            <a href="#"><div id="title"></div></a>
+            <div id = "main-frame">
+                <div style="width: 190px; height: 135px; position: relative; background-color: rgba(0, 0,0,0.1); left: 30px; top: 30px;"></div>
+                <div style="font-size: 20px; color: white; padding: 60px; margin: 0; width: 198px; height: 193px; position: relative; background: url('src/textbubble.gif'); background-size: 100%; left: 250px; bottom: 65px;">
+					<p>Hi dude!</p>
+				</div>
+            </div>
+            <h1 style="text-align: center;">Wanna join the mailing list?</h1>
+            <form id="form-mailing-list">
+                <input placeholder="booba@frogmail.net" id="input-mailing-list" type="text">
+                <input id="submit-mailing-list" type="submit" value="">
+            </form>
+            <div id="links-block" style="display: flex; justify-content: center; margin-top: 50px;">
+                <a href="../write.html"><div class="link-button">Писать письмо</div></a>
+                <a href="press-kit.html"><div class="link-button">Читать пресс-кит</div></a>
+                <a href="itch.io"><div class="link-button">Играть в демо</div></a>
+            </div>
+			<p>Frogolf is a roguelike deckbuilding about <b style="color:red">SUICIDAL FROGS PLAYING GOLF!</b></p>
+            <p>We have these:</p>
+            <ul class="in-text-list">
+                <li>Collect clubs</li>
+                <li>Drink tee at 5oklok (tee-gol)</li>
+                <li>Drink biiir at FROGOLF BAR (bar-golf)</li>
+                <li>Hit other frogolfers (true frogolf)</li>
+                <li>декбилдинг!! 0_0 and trading (trade-golf)</li>
+            </ul>
+			<div id="footer">
+				<b>2025, frogolf.</b><br>
+				<i>Why are frogs so happy? Because they eat whatever bugs them.</i>
+			<div>
+        </div>
+    </body>
+</html>
