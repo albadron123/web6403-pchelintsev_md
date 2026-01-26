@@ -1,6 +1,7 @@
 :root {
 	--main-light: #fff;
 	--main-dark: #000;
+    --transparent: rgba(0,0,0,0);
 }
 
 @font-face {
@@ -94,7 +95,7 @@ body {
 #send-button
 {
 	background-image: url("../src/send.gif");
-	background-color: rgba(0,0,0,0);
+	background-color: var(--transparent);
 	outline: none;
 	border: none;
 	width: 150px;
@@ -124,7 +125,35 @@ body {
     font-family: 'comic', "Comic Sans MS", "Comic Sans", cursive, sans-serif;
 }
 
+textarea::-webkit-scrollbar {
+    width: 0.5em;
+}
 
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 0.3em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: var(--main-dark);
+    outline: 1px solid var(--main-dark);
+    border-radius: 0.3em;
+    cursor: pointer;
+}
+
+
+
+.invisible-checkbox
+{
+    position: absolute;
+    background-color: var(--transparent);
+    appearance: none;
+}
+
+.invisible-checkbox:checked
+{
+    background-image: url("../src/tick.png");
+}
 
 
 h1
@@ -149,7 +178,7 @@ h1
     padding: 25px 0px;
     font-size: 18px;
     text-align: center;
-    color: black;
+    color: var(--main-dark);
     text-decoration: none;
     background-image: url("../src/button.gif");
     background-size: 200px 70px;
@@ -166,7 +195,7 @@ h1
 a
 {
     text-decoration: none;
-    color: black;
+    color: var(--main-dark);
 }
 
 p
@@ -187,7 +216,7 @@ p
     background-repeat: no-repeat;
     background-size: 533px 100px;
     background-position: center;
-    background-color: rgba(0,0,0,0);
+    background-color: var(--transparent);
 }
 
 #input-mailing-list:focus
@@ -208,7 +237,7 @@ p
     background-repeat: no-repeat;
     background-size: 133px 100px;
     background-position: center;
-    background-color: rgba(0,0,0,0);
+    background-color: var(--transparent);
 }
 
 #submit-mailing-list:hover
@@ -236,7 +265,7 @@ p
 
 #dialogue-box {
 	font-size: 20px; 
-	color: white; 
+	color: var(--main-light); 
 	padding: 60px;
    	margin: 0; 
 	width: 198px; 

@@ -1,4 +1,5 @@
 class LetterData {
+	
 	constructor (mail, name, contents, needReply) {
 		this.mail = mail;
 		this.name = name;
@@ -13,6 +14,7 @@ name: ${this.name}
 need-reply: ${this.needReply}
 contents:
 \t${this.contents}`;
+
 		console.log(message);
 	}
 }
@@ -30,6 +32,6 @@ function submitForm(e) {
 		document.getElementById("letter-mail").value,
 		document.getElementById("letter-name").value,
 		document.getElementById("letter-contents").value,
-		false);	
+		document.getElementById("letter-reply").checked);	
 	letterData.log();
 }
