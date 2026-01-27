@@ -15,13 +15,20 @@ func main() {
 	router.Use(cors.Default())
 
 	router.POST("/mailinglist", post_mailingList_stub)
+	router.POST("/form", post_form_stub)
 
 	router.Run("localhost:8080")
 
 }
 
 func post_mailingList_stub(c *gin.Context) {
-	fmt.Println("hello")
+	fmt.Println("mailing list recieved")
 	time.Sleep(1 * time.Second)
-	c.JSON(http.StatusBadRequest, gin.H{})
+	c.JSON(http.StatusCreated, gin.H{})
+}
+
+func post_form_stub(c *gin.Context) {
+	fmt.Println("letter recieved")
+	time.Sleep(1 * time.Second)
+	c.JSON(http.StatusCreated, gin.H{})
 }

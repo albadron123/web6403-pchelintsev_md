@@ -1,3 +1,6 @@
+
+
+
 //===some CMS-stuff here
 const basicFrogLines = [
 	"Hi there! Thanks for visiting the webpage!",
@@ -15,6 +18,16 @@ async function searchForRandomJoke()
 		url = "https://official-joke-api.appspot.com/random_joke";
 		response = await fetch(url);
 		jokeJson = await response.json();
+		console.log(jokeJson);
+		
+		if(typeof jokeJson.setup != "string" || typeof jokeJson.punchline != "string")
+		{
+			throw new Error(`format error`);
+		}
+		if(jokeJson.setup == '' || jokeJson.punchline == '')
+		{
+			throw new Error(`no joke`);			
+		}
 		return jokeJson;
 	}
 	catch (e)
@@ -178,13 +191,7 @@ function emailChanged()
 	}
 }
 
-function isEmailValid(email)
-{
-	// this regexp was found on the internet!!!
-	let validEmailRegExp = 
-		/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-	return (email.toLowerCase().match(validEmailRegExp) != null);
-}
+
 
 //===Dialogue controller work
 

@@ -2,6 +2,7 @@
 	--main-light: #fff;
 	--main-dark: #000;
     --warning: #ff9900;
+    --good: rgb(7, 95, 7);
     --transparent: rgba(0,0,0,0);
     interpolate-size: allow-keywords; /* 👈 */
 }
@@ -402,4 +403,5 @@ p
         transform: rotateZ(0deg);
     }
 }
+
 
