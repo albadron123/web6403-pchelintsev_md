@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FROGOLF</title>
+        <link rel="stylesheet" href="styles/main_styles.css">
+        <link rel="icon" type="image/svg+xml" href="src/icon.svg">
+        <script src="js/utils.js"></script>
+		<script src="js/main.js"></script>
+    </head>
+    <body>
+		<div id = "hide-all"> </div>
+        <div id = "wrapper">
+            <a href="#"><div class="title" id="main-title"></div></a>
+            <div class = "background-frame" id = "main-frame">
+                <div style="width: 190px; height: 135px; position: relative; background-color: rgba(0, 0,0,0.1); left: 30px; top: 30px;"></div>
+                <div id="dialogue-box" onclick="nextLine();animateDialogueBox();">
+					<p> hi, dude</p>
+				</div>
+            </div>
+            <h1 style="text-align: center;">Wanna join the mailing list?</h1>
+            <form id="form-mailing-list">
+                <p class="error-check" id="main-email-error-check"><b>NOTE:</b> e-mail now is not quite corrrect.<br><b>Example of a correct email:</b> <i>booba@frogmail.com</i></p>
+                <input placeholder="booba@frogmail.net" id="input-mailing-list" type="text">
+                <input id="submit-mailing-list" type="submit" value="">
+            </form>
+            <div id="links-block" style="display: flex; justify-content: center; margin-top: 50px;">
+                <a href="write.html"><div class="link-button">Write Letta</div></a>
+                <a href="press-kit.html"><div class="link-button">Read Press-kit</div></a>
+                <a href="http://itch.io"><div class="link-button">Play Dema</div></a>
+                <a href="album.html"><div class="link-button">See Album</div></a>
+            </div>
+			<p>Frogolf is a roguelike deckbuilding about <b style="color:red">SUICIDAL FROGS PLAYING GOLF!</b></p>
+            <p>We have these:</p>
+            <ul class="in-text-list">
+                <li>Collect clubs</li>
+                <li>Drink tee at 5oklok (tee-golf)</li>
+                <li>Drink biiir at FROGOLF BAR (bar-golf)</li>
+                <li>Hit other frogolfers (true frogolf)</li>
+                <li>Deckbuilding!! 0_0 and trading (trade-golf)</li>
+            </ul>
+			<div style="display: grid; grid-template-columns: 1fr 1fr; width: 100%; margin: 0; margin-top: 20px; padding: 0;">
+						<div>
+                            <h1>Physics based!</h1>
+                            <p>Select a club and bash into enemies (or throw your club into them!)</p>
+                        </div>		
+						<div style="text-align: right;">
+                            <img src="src/gif1.gif" style="width: 80%; border-radius: 5px;">
+                        </div>		
+						<div>
+                            <img src="src/gif3.gif" style="width: 80%; border-radius: 5px;">
+                        </div>
+						<div style="text-align: right;">
+                            <h1>Create unique builds!</h1>
+                            <p>Manage your inventory to find unique combination to fight enemies (yes, you may play only with rocks if you want)</p>
+                        </div>
+						<div>
+                            <h1>Be prepared</h1>
+                            <p>Take neuroleptic-drugs or <b style="color:red">kill yourself</b> if you lose!</p>
+                        </div>
+					    <div style="text-align: right;">
+                            <img src="src/gif2.gif" style="width: 80%; border-radius: 5px;">
+                        </div>	
+			</div>
+			<div id="footer">
+				<b>2025, frogolf.</b><br>
+				<i>Why are frogs so happy? Because they eat whatever bugs them.</i>
+			<div>
+        </div>
+    </body>
+</html>
