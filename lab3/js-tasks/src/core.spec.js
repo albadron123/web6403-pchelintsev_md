@@ -10,6 +10,14 @@ describe('Задания core js', () => {
         it('Возвращает false на нецелое число', () => {
             assert.equal(core.isInteger(1.2), false);
         });
+
+        it('Возвращает false на прочие типы данных', () => {
+            assert.equal(core.isInteger("string"), false, 'Co строкой');
+            assert.equal(core.isInteger([1]), false, 'C массивом');
+            assert.equal(core.isInteger("1"), false, 'С числом записанным в строке');
+            assert.equal(core.isInteger(() => 0), false, 'С функцией');
+        });
+        
     });
 
     describe('#even', () => {
@@ -54,6 +62,13 @@ describe('Задания core js', () => {
             assert.equal(core.isBinary(12), false);
             assert.equal(core.isBinary(1023), false);
         });
+
+        it('Возвращает false на прочие типы данных', () => {
+            assert.equal(core.isInteger("string"), false, 'Co строкой');
+            assert.equal(core.isInteger([1]), false, 'C массивом');
+            assert.equal(core.isInteger("1"), false, 'С числом записанным в строке');
+            assert.equal(core.isInteger(() => 0), false, 'С функцией');
+        });
     });
 
     describe('#fibonacci', () => {
@@ -62,6 +77,14 @@ describe('Задания core js', () => {
             assert.equal(core.fibonacci(2), 1);
             assert.equal(core.fibonacci(7), 13);
             assert.equal(core.fibonacci(10), 55);
+        });
+
+        it('Выбрасывает TypeError при неверном типе n', () => {
+            let errorFmt = {
+                name: "TypeError",
+                message: "Invalid argument: n must be a number.",
+            };
+            assert.throws(() => core.fibonacci("h"), errorFmt);
         });
     });
 
@@ -83,6 +106,14 @@ describe('Задания core js', () => {
             assert.strictEqual(staticFn(-1), -1);
             assert.strictEqual(staticFn(7), -1);
             assert.strictEqual(staticFn(0), -1);
+        });
+
+        it('Выбрасывает TypeError при неверном типе operatorFn', () => {
+            let errorFmt = {
+                name: "TypeError",
+                message: "Invalid argument: operatorFn must be a function.",
+            };
+            assert.throws(() => core.getOperationFn(-1, 1), errorFmt);
         });
     });
 
