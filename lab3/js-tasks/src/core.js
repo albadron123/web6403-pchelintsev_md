@@ -3,6 +3,9 @@
  * @param {*} n
  */
 function isInteger(n) {
+	//Upd: мне такое очень не нравится.... я погуглил и узнал, что это еще и не гарантированно сработает для больших чисел 
+	//т.е. это формально проверка именно на int32/64 (возможно в зависимости от системы даже)
+	//+ это имплицитно проверяет типы, что тоже так себе...
 	return (n|0) === n;
 }
 
@@ -14,11 +17,18 @@ function even() {
 	 * Correct code of the algorithm is written below:
 	
 	const even_numbers = [];
-	for(let i = 2; i <= 20; i+=2)
-	{
+	for(let i = 2; i <= 20; i+=2) {
 		even_numbers.push(i);
 	}
 	return even_numbers;
+
+	//Upd: Прошел год с того момента, как я это сделал и я все ещё считаю это забавным и лучшим из возможных решением :)
+	//Насчет алгоритма выше не знаю... в целом задача настолько простая, что смысла запариваться не вижу
+
+	//Upd2: можно еще сделать
+	//Array.from({length: 10}, (_,i)=>i*2+2);
+
+	//или через map / reduce но имхо вот так лучше всего:
 	*/
 	return [2,4,6,8,10,12,14,16,18,20];
 }
@@ -29,8 +39,7 @@ function even() {
  */
 function sumTo(n) {
 	let sum = 0;
-	for(let i = 0; i <= n; i++)
-	{
+	for(let i = 0; i <= n; i++) {
 		sum += i;
 	}
 	return sum;
@@ -65,6 +74,9 @@ function factorial(n) {
  * @param {*} n
  */
 function isBinary(n) {
+	//Upd: решил добавить это для универсальности
+	if(typeof(n) !== 'number') return false;
+
 	let testVal = 1;
 	do {
 		if (n == testVal) {
@@ -82,6 +94,9 @@ function isBinary(n) {
  * @param {*} n
  */
 function fibonacci(n) {
+	//Upd: аналогично решил тоже тут немного обезопасить код
+	if(typeof(n) !== 'number') throw new TypeError('Invalid argument: n must be a number.');
+
 	if(n == 1 || n == 2) return 1;
 	let curr = 1;
 	let prev = 1;
@@ -92,6 +107,7 @@ function fibonacci(n) {
 	}
 	return curr;
 }
+
 /** Напишите функцию, которая принимает начальное значение и функцию операции
  * и возвращает функцию - выполняющую эту операцию.
  * Если функция операции (operatorFn) не задана - по умолчанию всегда
@@ -104,7 +120,11 @@ function fibonacci(n) {
  * console.log(sumFn(3)) - 18
  */
 function getOperationFn(initialValue, operatorFn) {
-	operatorFn = (operatorFn === undefined) ? ((a,b) => a) : operatorFn;
+	operatorFn = (operatorFn === undefined) ? ((a) => a) : operatorFn;
+	// Upd: тут я опять же пытаюсь кинуть ошибку, т.к. лучше бы пользователю знать об этом
+	// мб конечно можно этого и не делать, но тогда мы узнаем об этом позже, когда попытаемся вызвать функцию...
+	if(typeof(operatorFn) != 'function') throw new TypeError("Invalid argument: operatorFn must be a function.");
+
 	let storedValue = initialValue;
 	return function operation(operand) {
 		storedValue = operatorFn(storedValue, operand);
@@ -131,11 +151,10 @@ function getOperationFn(initialValue, operatorFn) {
 function sequence(start, step) {
 	let gen_step = (step === undefined) ? 1: step;
 	let gen_val = (start === undefined) ? 0 : start;
-	return function generator()
-	{
+	return () => {
 		gen_val += gen_step;
 		return gen_val - gen_step;
-	}
+	};
 }
 
 /**
@@ -156,8 +175,8 @@ function deepEqual(firstObject, secondObject) {
 
 	if (firstObject === secondObject) return true;
 	if (Number.isNaN(firstObject) && Number.isNaN(secondObject)) return true;   
-	if (firstObject == null || typeof firstObject != 'object') return false;   
-	if (secondObject == null || typeof secondObject != 'object') return false;
+	if (firstObject == null || typeof(firstObject) != 'object') return false;   
+	if (secondObject == null || typeof(secondObject) != 'object') return false;
 	
 	const firstKeys = Object.keys(firstObject);
 	const secondKeys = Object.keys(secondObject);
