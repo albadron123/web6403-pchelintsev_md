@@ -14,7 +14,6 @@ name: ${this.name}
 need-reply: ${this.needReply}
 contents:
 \t${this.contents}`;
-
 		console.log(message);
 	}
 }
